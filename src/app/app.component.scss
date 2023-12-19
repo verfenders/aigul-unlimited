@@ -1,0 +1,26 @@
+.inner-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #E8EAF6;
+
+  height: 100%;
+  width: 100%;
+}
+
+.app-wrapper {
+  min-width: 600px;
+  min-height: 400px;
+  max-width: 1920px;
+  max-height: 1080px;
+
+  background-color: white;
+  border-radius: 4px;
+  border-width: 0;
+  border-style: solid;
+  border-color: white;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2),
+  0px 1px 1px 0px rgba(0, 0, 0, .14),
+  0px 1px 3px 0px rgba(0, 0, 0, .12);
+}
