@@ -6,4 +6,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 24px;
+}
+
+.main-card-header__points,
+.main-card-header__name,
+.main-card-header__settings {
+  width: 30%;
+}
+
+.main-card-header__points {
+  text-align: start;
+}
+
+.main-card-header__name {
+  text-align: center;
+}
+
+.main-card-header__settings {
+  text-align: end;
 }
