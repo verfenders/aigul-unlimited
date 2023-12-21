@@ -1,16 +1,35 @@
 <div class="main-card">
   <header class="main-card-header">
-    <div class="main-card-header__points"><strong>Пошив манжет внутренний</strong></div>
+    <div class="main-card-header__points">
+      <h3>Пошив манжет внутренний</h3>
+    </div>
 
-    <div class="main-card-header__name"><strong>Сотрудник: 200341</strong></div>
+    <div class="main-card-header__name"><h1>Сотрудник: 200341</h1></div>
 
     <div class="main-card-header__settings">
-      <button mat-icon-button aria-label="Завершить сеанс" color="primary" matTooltip="Завершить сессию">
+      <button mat-icon-button color="primary" matTooltip="Завершить сессию">
         <mat-icon>close</mat-icon>
       </button>
     </div>
   </header>
   <div class="main-card-body">
-    <mat-grid-list></mat-grid-list>
+    <div class="main-card-body__counter">
+      <div class="main-card-body__done">
+        <div class="main-card-body__title"><h4>Изготовлено</h4></div>
+        <div class="main-card-body__number-wrapper">
+          <span class="main-card-body__number">10</span>
+        </div>
+      </div>
+      <mat-divider vertical></mat-divider>
+      <div class="main-card-body__plan">
+        <div class="main-card-body__title"><h4>План работ</h4></div>
+        <div class="main-card-body__number-wrapper">
+          <span class="main-card-body__number">20</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-card-footer">
+    <button mat-raised-button color="primary">Изготовить деталь</button>
   </div>
 </div>
