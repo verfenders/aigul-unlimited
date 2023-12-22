@@ -34,9 +34,9 @@
   }
 
   .main-card-body {
-    padding: 16px;
     flex: 1 0 auto;
     user-select: none;
+    padding: 16px 16px 0;
 
     &__counter {
       height: 100%;
