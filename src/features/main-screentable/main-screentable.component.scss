@@ -17,6 +17,11 @@
 
     &__points {
       text-align: start;
+
+      &-text {
+        font-size: 16px;
+        font-weight: 400;
+      }
     }
 
     &__name {
@@ -40,8 +45,8 @@
     }
 
     &__number {
-      line-height: 200px;
-      font-size: 200px;
+      line-height: 150px;
+      font-size: 150px;
     }
 
     &__done,
@@ -72,9 +77,26 @@
     align-items: center;
     justify-content: space-between;
 
-    strong {
-      font-size: 16px;
+    &__manufacture, &__money, &__faq {
+      width: 30%;
     }
+
+    &__faq {
+      text-align: start;
+    }
+
+    &__money {
+      text-align: center;
+
+      strong {
+        font-size: 16px;
+      }
+    }
+
+    &__manufacture {
+      text-align: end;
+    }
+
   }
 }
 

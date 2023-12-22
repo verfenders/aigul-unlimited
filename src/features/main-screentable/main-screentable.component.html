@@ -1,7 +1,7 @@
 <div class="main-card">
   <header class="main-card-header">
     <div class="main-card-header__points">
-      <h3>Пошив манжет внутренний</h3>
+      <span class="main-card-header__points-text" matTooltip="Тип операции">Пошив манжет внутренний</span>
     </div>
 
     <div class="main-card-header__name"><h1>Сотрудник: 200341</h1></div>
@@ -31,7 +31,14 @@
   </div>
   <mat-divider></mat-divider>
   <div class="main-card-footer">
-    <span>Заработано: <strong>405 ₽</strong></span>
-    <button mat-raised-button color="primary">Изготовить деталь</button>
+    <div class="main-card-footer__faq">
+      <button  mat-button color="primary"><mat-icon>help</mat-icon> Справка</button>
+    </div>
+    <div class="main-card-footer__money">
+      <span>Заработано: <strong>405 ₽</strong></span>
+    </div>
+    <div class="main-card-footer__manufacture">
+      <button mat-raised-button color="primary">Изготовить деталь</button>
+    </div>
   </div>
 </div>
