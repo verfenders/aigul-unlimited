@@ -2,75 +2,80 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+
+  .main-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 16px 0;
+    flex-shrink: 0;
+
+    &__points, &__name, &__settings {
+      width: 30%;
+    }
+
+    &__points {
+      text-align: start;
+    }
+
+    &__name {
+      text-align: center;
+    }
+
+    &__settings {
+      text-align: end;
+    }
+  }
+
+  .main-card-body {
+    padding: 16px;
+    flex: 1 0 auto;
+    user-select: none;
+
+    &__counter {
+      height: 100%;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    &__number {
+      line-height: 200px;
+      font-size: 200px;
+    }
+
+    &__done,
+    &__plan {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__title {
+      flex-shrink: 0;
+    }
+
+    &__number-wrapper {
+      flex: 1 0 auto;
+
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .main-card-footer {
+    flex-shrink: 0;
+    padding: 16px;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    strong {
+      font-size: 16px;
+    }
+  }
 }
 
-.main-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  padding: 16px 16px 0;
-  flex-shrink: 0;
-}
 
-.main-card-header__points,
-.main-card-header__name,
-.main-card-header__settings {
-  width: 30%;
-}
-
-.main-card-header__points {
-  text-align: start;
-}
-
-.main-card-header__name {
-  text-align: center;
-}
-
-.main-card-header__settings {
-  text-align: end;
-}
-
-.main-card-body {
-  padding: 16px;
-  flex: 1 0 auto;
-}
-
-.main-card-body__counter {
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.main-card-body__number {
-  line-height: 200px;
-  font-size: 200px;
-}
-
-.main-card-body__done,
-.main-card-body__plan {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.main-card-body__title {
-  flex-shrink: 0;
-}
-
-.main-card-body__number-wrapper {
-  flex: 1 0 auto;
-
-  display: flex;
-  align-items: center;
-}
-
-.main-card-footer {
-  flex-shrink: 0;
-  padding: 16px;
-  text-align: center;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
