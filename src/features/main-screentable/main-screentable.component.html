@@ -1,46 +1,62 @@
 <div class="main-card">
-  <header class="main-card-header">
-    <div class="main-card-header__points">
-      <span class="main-card-header__points-text" matTooltip="Тип операции"
-        >Пошив манжет внутренний</span
-      >
-    </div>
+  <div>
+    <header class="main-card-header">
+      <div class="main-card-header__points">
+        <h3
+          matTooltip="Тип операции"
+        >
+          Пошив манжет внутренний
+        </h3>
+      </div>
 
-    <div class="main-card-header__name"><h1>Сотрудник: 200341</h1></div>
-
-    <div class="main-card-header__settings">
-      <button mat-icon-button color="primary" matTooltip="Завершить сессию">
-        <mat-icon>close</mat-icon>
-      </button>
-    </div>
-  </header>
+      <div class="main-card-header__name"><h3>Сотрудник: 200341</h3></div>
+    </header>
+    <mat-divider></mat-divider>
+  </div>
   <div class="main-card-body">
-    <div class="main-card-body__counter">
-      <div class="main-card-body__done">
-        <div class="main-card-body__title"><h4>Изготовлено</h4></div>
-        <div class="main-card-body__number-wrapper">
-          <span class="main-card-body__number">10</span>
+    <div class="main-card-body__section">
+      <h3 class="main-card-body__section-name">Прогресс изготовления:</h3>
+      <section>
+        <mat-progress-bar
+          color="primary"
+          mode="determinate"
+          value="40">
+        </mat-progress-bar>
+        <div class="progress-bar-counter">
+          <span>0 деталей</span>
+          <span>100 деталей</span>
         </div>
-      </div>
-      <mat-divider vertical></mat-divider>
-      <div class="main-card-body__plan">
-        <div class="main-card-body__title"><h4>План работ</h4></div>
-        <div class="main-card-body__number-wrapper">
-          <span class="main-card-body__number">20</span>
+      </section>
+      <button class="do-detail-button" mat-raised-button color="primary">Изготовить деталь</button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="main-card-body__section">
+      <h3 class="main-card-body__section-name">Денежное вознаграждение:</h3>
+      <section>
+        <mat-progress-bar
+          color="primary"
+          mode="determinate"
+          value="40">
+        </mat-progress-bar>
+        <div class="progress-bar-counter">
+          <span>0 рублей</span>
+          <span>1000 рублей</span>
         </div>
-      </div>
+      </section>
     </div>
   </div>
   <mat-divider></mat-divider>
-  <div class="main-card-footer">
+  <footer class="main-card-footer">
     <div class="main-card-footer__faq">
-      <button mat-button color="primary" (click)="openFaq()"><mat-icon>help</mat-icon> Справка</button>
-    </div>
-    <div class="main-card-footer__money">
-      <span>Заработано: <strong>405 ₽</strong></span>
+      <button mat-button color="primary" (click)="openFaq()">
+        <mat-icon>help</mat-icon>
+        Справка
+      </button>
     </div>
     <div class="main-card-footer__manufacture">
-      <button mat-raised-button color="primary">Изготовить деталь</button>
+      <button mat-button color="warn" matTooltip="Завершить сессию">
+        Завершить работу
+      </button>
     </div>
-  </div>
+  </footer>
 </div>

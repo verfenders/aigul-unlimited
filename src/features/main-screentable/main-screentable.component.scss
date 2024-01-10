@@ -11,60 +11,48 @@
     padding: 16px 16px 0;
     flex-shrink: 0;
 
-    &__points, &__name, &__settings {
-      width: 30%;
-    }
-
     &__points {
       text-align: start;
-
-      &-text {
-        font-size: 16px;
-        font-weight: 400;
-      }
     }
 
     &__name {
       text-align: center;
     }
-
-    &__settings {
-      text-align: end;
-    }
   }
 
   .main-card-body {
-    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
     user-select: none;
     padding: 16px 16px 0;
 
-    &__counter {
+    &__section {
+      text-align: center;
       height: 100%;
       display: flex;
-      justify-content: space-evenly;
-    }
-
-    &__number {
-      line-height: 150px;
-      font-size: 150px;
-    }
-
-    &__done,
-    &__plan {
-      display: flex;
       flex-direction: column;
-      align-items: center;
+      justify-content: center;
     }
 
-    &__title {
-      flex-shrink: 0;
+    &__section-name {
+      text-align: left;
     }
 
-    &__number-wrapper {
-      flex: 1 0 auto;
-
+    .progress-bar-counter {
       display: flex;
-      align-items: center;
+      justify-content: space-between;
+      padding-right: 16px;
+      padding-left: 16px;
+      padding-top: 4px;
+    }
+
+    .do-detail-button {
+      margin-top: 24px;
+      width: 200px;
+      height: 56px;
+      align-self: center;
     }
   }
 
@@ -77,7 +65,7 @@
     align-items: center;
     justify-content: space-between;
 
-    &__manufacture, &__money, &__faq {
+    &__manufacture, &__faq {
       width: 30%;
     }
 
@@ -85,18 +73,9 @@
       text-align: start;
     }
 
-    &__money {
-      text-align: center;
-
-      strong {
-        font-size: 16px;
-      }
-    }
-
     &__manufacture {
       text-align: end;
     }
-
   }
 }
 
