@@ -1,1 +1,18 @@
-<p>auth works!</p>
+<div class="auth">
+  <form class="auth__form" (ngSubmit)="login()">
+    <h1 class="auth__title">
+      Добро пожаловать!
+    </h1>
+      <mat-form-field appearance="outline" class="auth__field">
+        <mat-label>Введите id сотрудника</mat-label>
+        <input matInput placeholder="id" [formControl]="personId">
+      </mat-form-field>
+    @if(!loading) {
+      <button mat-raised-button color="primary" type="submit">
+        Войти
+      </button>
+    } @else {
+      <mat-spinner diameter="50"></mat-spinner>
+    }
+  </form>
+</div>
