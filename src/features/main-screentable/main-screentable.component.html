@@ -27,7 +27,8 @@
           <span>{{ producedDetailLimit }} деталей</span>
         </div>
       </section>
-      <button class="do-detail-button" mat-raised-button color="primary" (click)="createDetail()">Изготовить деталь</button>
+      <button class="do-detail-button" mat-raised-button color="primary" (click)="createDetail()">Изготовить деталь
+      </button>
     </div>
     <mat-divider></mat-divider>
     <div class="main-card-body__section">
@@ -55,7 +56,7 @@
       </button>
     </div>
     <div class="main-card-footer__manufacture">
-      <button mat-button color="warn" matTooltip="Завершить сессию">
+      <button mat-button color="warn" matTooltip="Завершить сессию" (click)="finishWork()">
         Завершить работу
       </button>
     </div>

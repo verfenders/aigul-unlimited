@@ -8,7 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { TaskFaqComponent } from '../task-faq/task-faq.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { Router } from '@angular/router';
-import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
+import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-main-screentable',
@@ -60,12 +60,32 @@ export class MainScreentableComponent implements OnInit {
   }
 
   createDetail() {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent);
-    dialogRef.afterClosed().subscribe(res => {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
+        header: 'Вы уверены, что деталь изготовлена?',
+        content: `Для полного изготовления детали следует выполнить все шаги изготовления. <br>
+        Их можно найии в разделе "Справка".`,
+      },
+    });
+    dialogRef.afterClosed().subscribe((res) => {
       if (res) {
         this.producedDetails++;
         this.salary += this.detailSalary;
       }
-    })
+    });
+  }
+
+  finishWork() {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
+        header: 'Вы уверены, что хотите завершить работу?',
+        content: 'При завершении работы прогресс будет утерян.',
+      },
+    });
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res) {
+        this.router.navigate(['/auth']);
+      }
+    });
   }
 }
