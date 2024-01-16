@@ -3,11 +3,11 @@
     <h1 class="auth__title">
       Добро пожаловать!
     </h1>
-      <mat-form-field appearance="outline" class="auth__field">
-        <mat-label>Введите id сотрудника</mat-label>
-        <input matInput placeholder="id" [formControl]="personIdControl">
-      </mat-form-field>
-    @if(!loading) {
+    <mat-form-field appearance="outline" class="auth__field">
+      <mat-label>Введите id сотрудника</mat-label>
+      <input matInput placeholder="id" [formControl]="personIdControl" maxlength="20">
+    </mat-form-field>
+    @if (!loading) {
       <button mat-raised-button color="primary" type="submit">
         Войти
       </button>
