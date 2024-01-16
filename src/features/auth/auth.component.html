@@ -5,7 +5,7 @@
     </h1>
       <mat-form-field appearance="outline" class="auth__field">
         <mat-label>Введите id сотрудника</mat-label>
-        <input matInput placeholder="id" [formControl]="personId">
+        <input matInput placeholder="id" [formControl]="personIdControl">
       </mat-form-field>
     @if(!loading) {
       <button mat-raised-button color="primary" type="submit">

@@ -5,6 +5,7 @@ import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angu
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -22,11 +23,19 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   styleUrl: './auth.component.scss',
 })
 export class AuthComponent {
-  personId = new FormControl('', [Validators.required]);
+  personIdControl = new FormControl('', [Validators.required]);
   loading = false;
+
+  constructor(private router: Router) {}
 
   login() {
     this.loading = true;
-    console.log('event - ', this.personId.value);
+    if (this.personIdControl.value && this.personIdControl.value?.trim().length > 0) {
+      localStorage.setItem('personId', this.personIdControl.value);
+      this.router.navigate(['/work-space']);
+    } else {
+      this.personIdControl.reset();
+      this.loading = false;
+    }
   }
 }
