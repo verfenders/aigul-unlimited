@@ -20,14 +20,14 @@
         <mat-progress-bar
           color="primary"
           mode="determinate"
-          value="40">
+          [value]="(this.producedDetails/this.producedDetailLimit) * 100">
         </mat-progress-bar>
         <div class="progress-bar-counter">
-          <span>0 деталей</span>
-          <span>100 деталей</span>
+          <span>{{ producedDetails }} деталей</span>
+          <span>{{ producedDetailLimit }} деталей</span>
         </div>
       </section>
-      <button class="do-detail-button" mat-raised-button color="primary">Изготовить деталь</button>
+      <button class="do-detail-button" mat-raised-button color="primary" (click)="createDetail()">Изготовить деталь</button>
     </div>
     <mat-divider></mat-divider>
     <div class="main-card-body__section">
@@ -36,11 +36,11 @@
         <mat-progress-bar
           color="primary"
           mode="determinate"
-          value="40">
+          [value]="(this.salary/this.salaryLimit) * 100">
         </mat-progress-bar>
         <div class="progress-bar-counter">
-          <span>0 рублей</span>
-          <span>1000 рублей</span>
+          <span>{{ salary }} рублей</span>
+          <span>{{ salaryLimit }} рублей</span>
         </div>
       </section>
     </div>

@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { TaskFaqComponent } from '../task-faq/task-faq.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { Router } from '@angular/router';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-main-screentable',
@@ -26,6 +27,10 @@ import { Router } from '@angular/router';
 export class MainScreentableComponent implements OnInit {
   loading = false;
   personId = '';
+  producedDetails = 0;
+  producedDetailLimit = 100;
+  salary = 0;
+  salaryLimit = 10000;
 
   constructor(
     private dialog: MatDialog,
@@ -33,6 +38,10 @@ export class MainScreentableComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.checkIfUserLoggedIn();
+  }
+
+  checkIfUserLoggedIn() {
     this.loading = true;
 
     const id = localStorage.getItem('personId');
@@ -47,5 +56,15 @@ export class MainScreentableComponent implements OnInit {
 
   openFaq() {
     this.dialog.open(TaskFaqComponent);
+  }
+
+  createDetail() {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent);
+    dialogRef.afterClosed().subscribe(res => {
+      if (res) {
+        this.producedDetails++;
+        this.salary += 100;
+      }
+    })
   }
 }
