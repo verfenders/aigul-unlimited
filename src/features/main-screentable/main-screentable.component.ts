@@ -31,6 +31,7 @@ export class MainScreentableComponent implements OnInit {
   producedDetailLimit = 100;
   salary = 0;
   salaryLimit = 10000;
+  detailSalary = 100;
 
   constructor(
     private dialog: MatDialog,
@@ -63,7 +64,7 @@ export class MainScreentableComponent implements OnInit {
     dialogRef.afterClosed().subscribe(res => {
       if (res) {
         this.producedDetails++;
-        this.salary += 100;
+        this.salary += this.detailSalary;
       }
     })
   }
