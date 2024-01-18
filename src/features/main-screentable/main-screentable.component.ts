@@ -64,7 +64,7 @@ export class MainScreentableComponent implements OnInit {
       data: {
         header: 'Вы уверены, что деталь изготовлена?',
         content: `Для полного изготовления детали следует выполнить все шаги изготовления. <br>
-        Их можно найии в разделе "Справка".`,
+        Их можно найти в разделе "Справка".`,
       },
     });
     dialogRef.afterClosed().subscribe((res) => {
