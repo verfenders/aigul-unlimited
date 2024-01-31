@@ -9,6 +9,7 @@ import { TaskFaqComponent } from '../task-faq/task-faq.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { Router } from '@angular/router';
 import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dialog.component';
+import { CreateDetailDialogComponent } from '../create-detail-dialog/create-detail-dialog.component';
 
 @Component({
   selector: 'app-main-screentable',
@@ -60,7 +61,7 @@ export class MainScreentableComponent implements OnInit {
   }
 
   createDetail() {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+    const dialogRef = this.dialog.open(CreateDetailDialogComponent, {
       data: {
         header: 'Вы уверены, что деталь изготовлена?',
         content: `Для полного изготовления детали следует выполнить все шаги изготовления. <br>
@@ -69,8 +70,8 @@ export class MainScreentableComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((res) => {
       if (res) {
-        this.producedDetails++;
-        this.salary += this.detailSalary;
+        this.producedDetails += res;
+        this.salary += (this.detailSalary * res);
       }
     });
   }

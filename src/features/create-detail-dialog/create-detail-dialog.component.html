@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Укажите количество изготовленных деталей</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="outline" class="done-details-field">
+    <mat-label>Изготовлено</mat-label>
+    <input matInput [formControl]="detailsNumber" type="number">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button color="primary" [mat-dialog-close]="0">Отменить</button>
+  <button
+    mat-raised-button
+    color="primary"
+    [mat-dialog-close]="detailsNumber.value"
+    cdkFocusInitial
+    [disabled]="!detailsNumber.valid"
+  >
+    Подтвердить
+  </button>
+</div>
